@@ -1,5 +1,5 @@
 //exercise 1 section
-//defined the function
+console.log("EXERCISE 1:\n=========\n");
 function printOdds(count){
     //1. initilization
     //2. Conditional
@@ -39,40 +39,49 @@ function checkAge(userName, age ) {
         checkAge()
       
         //exercise 3
-        const caresian = (x, y) => {
-            if (x == 0 && y == 0){
-                console.log("Origin Point");
-            } else if  (y == 0) {
-                console.log("Y-Axis");
-            }else if  (x == 0) {
-                console.log ("Y-Axis");
-            } else  if (x > 0) { 
-                if (y > 0) {
-                    console.log("Quadrant 1");
-                } else { 
-                   console.log("Quadrant 4");
-                } else { 
-                    console.log("Quadrant 3");
-                }
-            } };
+        function pointPosition(x, y) {
+            if (x === 0 && y === 0) {
+                console.log("The point is at the origin.");
+            } else if (x === 0) {
+                console.log(`(${x}, ${y}) is on the y axis`);
+            } else if (y === 0) {
+                console.log(`(${x}, ${y}) is on the x axis`);
+            } else if (x > 0 && y > 0) {
+                console.log(`(${x}, ${y}) is in Quadrant 1`);
+            } else if (x < 0 && y > 0) {
+                console.log(`(${x}, ${y}) is in Quadrant 2`);
+            } else if (x < 0 && y < 0) {
+                console.log(`(${x}, ${y}) is in Quadrant 3`);
+            } else {
+                console.log(`(${x}, ${y}) is in Quadrant 4`);
+            }
+        }
+        
+        // Example usage:
+        pointPosition(0, 2); // Should print "(0, 2) is on the y axis"
+        pointPosition(1, 2); // Should print "(1, 2) is in Quadrant 1"
+        pointPosition(-6, 18); // Should print "(-6, 18) is in Quadrant 2"
+        
+                
+            ;
              //exercise 4
-            const getTriangleType = (a, b, c) => {
-                console.log(a, b, c);
-                if (a + b <= c  || a + c <= b || b + a <= c){
-                   return "Invalide Triangle" ;
-                } else if (a == b && a == c) {
-                    return "Equalatural";
-                } else {  (a != b  && a != c && b != c) {
-                    return "Scalene";
-                } else {  
-                    return "Isoceles ";
-              
-                }}}
-               
-              console.log (getTriangleType(1, 2, 2));
-               console.log(getTriangleType(1, 1, 2));
-               console.log(getTriangleType(2, 2, 2));
-               console.log(getTriangleType(3, 4, 5));
+             function triangleType(side1, side2, side3) {
+                if (side1 + side2 <= side3 || side1 + side3 <= side2 || side2 + side3 <= side1) {
+                    return "Invalid triangle";
+                } else if (side1 === side2 && side2 === side3) {
+                    return "Equilateral triangle";
+                } else if (side1 === side2 || side1 === side3 || side2 === side3) {
+                    return "Isosceles triangle";
+                } else {
+                    return "Scalene triangle";
+                }
+            }
+            
+            // Example usage:
+            console.log(triangleType(1, 2, 2)); // Should print "Isosceles triangle"
+            console.log(triangleType(1, 1, 2)); // Should print "Invalid triangle"
+            console.log(getTriangleType(2, 2, 2));
+            console.log(getTriangleType(3, 4, 5));
 
 
           //exercise 5
